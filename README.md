@@ -80,7 +80,7 @@ python FaceRecognitionSystem.py
 | 1 | 直接用系统 Python（`PATH` 里的 `python`）运行主程序 |
 | 2 | 本机系统 Python **3.10.11** 与 `venv` 的依赖**完全一致、无缺失**（逐项导入检查：insightface / onnxruntime / cv2 / numpy / PyQt5 / PIL / win32gui / win32process / psutil / requests / pinyin / socks / fake_useragent / appdirs / comtypes / scipy / sklearn / albumentations / easydict / prettytable） |
 | 3 | 脚本顶部 `set "USE_VENV=0"` 改成 `1` 即可，无需改动其它逻辑（已干跑验证 `USE_VENV=1` 分支正常走 `call venv\Scripts\activate.bat`） |
-| 4 | 取消注释 `set "PYEXE=D:\Program Files\Python310\python.exe"` 即可指定任意解释器（含 `py -3.10` 等启动器写法） |
+| 4 | 取消注释 `1.bat` 里的 `set "PYEXE="` 那一行，把路径换成**你自己** Python 的完整路径，即可指定任意解释器（也支持 `py -3.10` 等启动器写法） |
 | 5 | 只执行 `python -c "import sys;…"`（毫秒级，刻意不做 InsightFace/cv2 这类重量级 import，避免每次启动多等几秒）；可拦住 Windows 商店的 `python` 占位程序 |
 | 6 | 找不到解释器 → 提示三种解决办法；程序异常退出 → 打印 `pip install -r build\requirements.txt` 与 `USE_VENV` 说明，并 `pause` |
 | 7 | 脚本头部 `cd /d "%~dp0"`，从任何工作目录调用都正确 |
